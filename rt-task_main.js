@@ -34,11 +34,17 @@ timeline.push(instructions);
 
 /* test trials */
 
-var test_stimuli = [
+/*var test_stimuli = [
   { stimulus: repo_site + "img/blue.png", // Change 3: Adding `repo_site` in `test_stimuli`
-   data: { test_part: 'test', correct_response: 'f', side: 'left' } },
+   data: { test_part: 'test', correct_response: 'f' } },
   { stimulus: repo_site + "img/orange.png", // Change 3: Adding `repo_site` in `test_stimuli`
-  data: { test_part: 'test', correct_response: 'j', side: 'right' } }
+  data: { test_part: 'test', correct_response: 'j'} }
+];*/
+var test_stimuli = [
+  { stimulus: repo_site + "img/blue.png", side: 'left', data: { test_part: 'test', correct_response: 'f', side: 'left'}},
+  { stimulus: repo_site + "img/blue.png", side: 'left', data: { test_part: 'test', correct_response: 'j', side: 'left' }},
+  { stimulus: repo_site + "img/orange.png", side: 'right', data: { test_part: 'test', correct_response: 'f', side: 'right'}},
+  { stimulus: repo_site + "img/orange.png", side: 'right', data: { test_part: 'test', correct_response: 'j', side: 'right'}}
 ];
 
 var fixation = {
@@ -51,7 +57,7 @@ var fixation = {
   data: {test_part: 'fixation'}
 }
 
-var test = {
+/*var test = {
   type: "image-keyboard-response",
   stimulus: jsPsych.timelineVariable('stimulus'),
   choices: ['f', 'j'],
@@ -59,7 +65,29 @@ var test = {
   on_finish: function(data){
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
   },
-}
+}*/
+var test = {
+  type: "html-keyboard-response",
+  stimulus: function() {
+      // define a variable called "shift" that determines the left/right shift value, based on "side" from timeline variables
+      var shift;
+      if (jsPsych.timelineVariable('side', true) == 'left') {
+        // shift image 300 px to the left - percentages also work
+        shift = "-300px";
+      } else if (jsPsych.timelineVariable('side', true) == 'right') {
+        // shift image 300 px to the right - percentages also work
+        shift = "300px";
+      }
+      // combine the "stimulus" (image file path) and "shift" in a single HTML string to use for the trial stimulus
+      return '<img src="'+jsPsych.timelineVariable('stimulus',true)+'" style="transform: translate('+shift+'); width:300px;"/>'
+  },
+  choices: ['f', 'j'],
+  data: jsPsych.timelineVariable('data'),
+  on_finish: function(data){
+    data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
+  }
+};
+
 
 var test_procedure = {
   timeline: [fixation, test],
