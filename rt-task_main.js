@@ -16,11 +16,9 @@ timeline.push(welcome_block);
 /* define instructions trial */
 var instructions = {
   type: "html-keyboard-response",
-  stimulus: "<p>In this experiment, a circle will appear in the center " +
-      "of the screen.</p><p>If the circle is <strong>blue</strong>, " +
-      "press the letter F on the keyboard as fast as you can.</p>" +
-      "<p>If the circle is <strong>orange</strong>, press the letter J " +
-      "as fast as you can.</p>" +
+  stimulus: "<p>In this experiment, a shape will appear on the screen " +
+      "If a <strong>circle</strong> appears, press the letter F on the keyboard as fast as you can " +
+      "If a <strong>triangle</strong> appears, press the letter F on the keyboard as fast as you can </p>" +
       "<div style='width: 700px;'>"+
       "<div style='float: left;'><img src='" + repo_site + "img/blue.png'></img>" + // Change 2: Adding `repo_site` in `instructions`
       "<p class='small'><strong>Press the F key</strong></p></div>" +
