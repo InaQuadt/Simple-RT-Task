@@ -39,10 +39,10 @@ timeline.push(instructions);
   data: { test_part: 'test', correct_response: 'j'} }
 ];*/
 var test_stimuli = [
-  { stimulus: repo_site + "img/circle.png", side: 'left', data: { test_part: 'test', correct_response: 'f', side: 'left'}}, //congruent
-  { stimulus: repo_site + "img/triangle.png", side: 'left', data: { test_part: 'test', correct_response: 'j', side: 'left' }}, //INcongruent
-  { stimulus: repo_site + "img/circle.png", side: 'right', data: { test_part: 'test', correct_response: 'f', side: 'right'}}, //INcongruent
-  { stimulus: repo_site + "img/triangle.png", side: 'right', data: { test_part: 'test', correct_response: 'j', side: 'right'}} //congruent
+  { stimulus: repo_site + "img/circle.png", side: 'left', data: { test_part: 'test', correct_response: 'f', side: 'left'}},
+  { stimulus: repo_site + "img/triangle.png", side: 'left', data: { test_part: 'test', correct_response: 'j', side: 'left' }},
+  { stimulus: repo_site + "img/circle.png", side: 'right', data: { test_part: 'test', correct_response: 'f', side: 'right'}},
+  { stimulus: repo_site + "img/triangle.png", side: 'right', data: { test_part: 'test', correct_response: 'j', side: 'right'}}
 ];
 
 var fixation = {
@@ -64,7 +64,6 @@ var fixation = {
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
   },
 }*/
-
 var test = {
   type: "html-keyboard-response",
   stimulus: function() {
@@ -72,10 +71,10 @@ var test = {
       var shift;
       if (jsPsych.timelineVariable('side', true) == 'left') {
         // shift image 300 px to the left - percentages also work
-        shift = "-600px";
+        shift = "-300px";
       } else if (jsPsych.timelineVariable('side', true) == 'right') {
         // shift image 300 px to the right - percentages also work
-        shift = "600px";
+        shift = "300px";
       }
       // combine the "stimulus" (image file path) and "shift" in a single HTML string to use for the trial stimulus
       return '<img src="'+jsPsych.timelineVariable('stimulus',true)+'" style="transform: translate('+shift+'); width:300px;"/>'
