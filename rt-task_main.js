@@ -25,7 +25,7 @@ var instructions = {
       "<div class='float: right;'><img src='" + repo_site + "img/triangle.png'></img>" + // Change 2: Adding `repo_site` in `instructions`
       "<p class='small'><strong>Press the J key</strong></p></div>" +
       "</div>"+
-      "<p style='color: red'> Press any key to begin. </p>",
+      "<p style='color: red'><strong> Press any key to begin. </strong></p>",
   post_trial_gap: 2000
 };
 timeline.push(instructions);
