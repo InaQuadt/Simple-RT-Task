@@ -88,8 +88,24 @@ var test = {
   }
 };
 
+/Changes feedback
+var feedback ={ 
+    type: "html-keyboard-response",
+    stimulus: function() {
+        var feedback_text = "incorrect";
+        var lasttrialdata = jsPsych.data.getLastTrialData().values()[0].accuracy;
+        if (lasttrialdata == true) {
+          feedback_text = "Correct!"
+        }
+        return feedback_text
+    }, 
+    choices: jspych.NO_KEYS,
+    trial_duration: 3000 
+}
+
+
 var test_procedure = {
-  timeline: [fixation, test],
+  timeline: [fixation, test, feedback],
   timeline_variables: test_stimuli,
   repetitions: 5,
   randomize_order: true
