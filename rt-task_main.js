@@ -39,10 +39,10 @@ timeline.push(instructions);
   data: { test_part: 'test', correct_response: 'j'} }
 ];*/
 var test_stimuli = [
-  { stimulus: repo_site + "img/circle.png", side: 'left', data: { test_part: 'test', correct_response: 'f', side: 'left'}},
-  { stimulus: repo_site + "img/triangle.png", side: 'left', data: { test_part: 'test', correct_response: 'j', side: 'left' }},
-  { stimulus: repo_site + "img/circle.png", side: 'right', data: { test_part: 'test', correct_response: 'f', side: 'right'}},
-  { stimulus: repo_site + "img/triangle.png", side: 'right', data: { test_part: 'test', correct_response: 'j', side: 'right'}}
+  { stimulus: repo_site + "img/circle.png", side: 'left', data: { test_part: 'test', correct_response: 'f', side: 'left'}}, //congruent
+  { stimulus: repo_site + "img/triangle.png", side: 'left', data: { test_part: 'test', correct_response: 'j', side: 'left' }}, //INcongruent
+  { stimulus: repo_site + "img/circle.png", side: 'right', data: { test_part: 'test', correct_response: 'f', side: 'right'}}, //INcongruent
+  { stimulus: repo_site + "img/triangle.png", side: 'right', data: { test_part: 'test', correct_response: 'j', side: 'right'}} //congruent
 ];
 
 var fixation = {
@@ -86,9 +86,34 @@ var test = {
   }
 };
 
+// Changes to add practice trials...
+
+var practice_block = {
+    timeline: [fixation, test],
+    timeline_variables: test_stimuli,
+    repetitions: 5,
+    randomize_order: true
+}
+timeline.push(practice_block);
+
+var feedback ={ 
+    type: "html-keyboard-response",
+    stimulus: function() {
+        var feedback_text = "incorrect";
+        var last_trial_accuracy = jsPsych.data.getLastTrialData().values()[0].accuracy; 
+        if (last_trial_accuracy == true) {
+            feedback_text = "correct!" 
+        }
+        return feedback_text
+    } 
+    choices: jspych.NO_KEYS,
+    trial_duration: 3000 
+    
+  
+}
 
 var test_procedure = {
-  timeline: [fixation, test],
+  timeline: [fixation, test, feedback],
   timeline_variables: test_stimuli,
   repetitions: 5,
   randomize_order: true
