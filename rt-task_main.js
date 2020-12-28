@@ -64,7 +64,7 @@ var feedback ={
             feedback_text = "correct!" 
         }
         return feedback_text
-    } 
+    }, 
     choices: jspych.NO_KEYS,
     trial_duration: 3000 
 }
@@ -78,6 +78,7 @@ var feedback ={
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
   },
 }*/
+
 var test = {
   type: "html-keyboard-response",
   stimulus: function() {
@@ -99,8 +100,6 @@ var test = {
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
   }
 };
-
-// Changes to add practice trials...
 
 var test_procedure = {
   timeline: [fixation, test, feedback],
