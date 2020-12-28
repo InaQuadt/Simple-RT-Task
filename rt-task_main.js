@@ -88,14 +88,6 @@ var test = {
 
 // Changes to add practice trials...
 
-var practice_block = {
-    timeline: [fixation, test],
-    timeline_variables: test_stimuli,
-    repetitions: 5,
-    randomize_order: true
-}
-timeline.push(practice_block);
-
 var feedback ={ 
     type: "html-keyboard-response",
     stimulus: function() {
@@ -108,12 +100,19 @@ var feedback ={
     } 
     choices: jspych.NO_KEYS,
     trial_duration: 3000 
-    
-  
 }
 
+var practice_block = {
+    timeline: [fixation, test, feedback],
+    timeline_variables: test_stimuli,
+    repetitions: 5,
+    randomize_order: true
+}
+timeline.push(practice_block);
+
+
 var test_procedure = {
-  timeline: [fixation, test, feedback],
+  timeline: [fixation, test],
   timeline_variables: test_stimuli,
   repetitions: 5,
   randomize_order: true
