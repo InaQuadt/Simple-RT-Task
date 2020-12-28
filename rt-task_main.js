@@ -71,10 +71,10 @@ var test = {
       var shift;
       if (jsPsych.timelineVariable('side', true) == 'left') {
         // shift image 300 px to the left - percentages also work
-        shift = "-300px";
+        shift = "-600px";
       } else if (jsPsych.timelineVariable('side', true) == 'right') {
         // shift image 300 px to the right - percentages also work
-        shift = "300px";
+        shift = "600px";
       }
       // combine the "stimulus" (image file path) and "shift" in a single HTML string to use for the trial stimulus
       return '<img src="'+jsPsych.timelineVariable('stimulus',true)+'" style="transform: translate('+shift+'); width:300px;"/>'
