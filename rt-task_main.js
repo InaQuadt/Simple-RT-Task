@@ -89,7 +89,7 @@ var test = {
 
 
 var test_procedure = {
-  timeline: [fixation, test, feedback],
+  timeline: [fixation, test],
   timeline_variables: test_stimuli,
   repetitions: 5,
   randomize_order: true
