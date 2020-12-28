@@ -17,15 +17,15 @@ timeline.push(welcome_block);
 var instructions = {
   type: "html-keyboard-response",
   stimulus: "<p>In this experiment, a shape will appear on the screen </p>" +
-      "<p> If a <strong>circle</strong> appears, press the letter <strong>F</strong> on the keyboard as fast as you can </p>" +
-      "<p> If a <strong>triangle</strong> appears, press the letter <strong>J</strong> on the keyboard as fast as you can </p>" +
+      "<p> If a <strong>circle</strong> appears, press the letter <strong>F</strong> on the keyboard as fast as you can. </p>" +
+      "<p> If a <strong>triangle</strong> appears, press the letter <strong>J</strong> on the keyboard as fast as you can. </p>" +
       "<div style='width: 700px;'>"+
       "<div style='float: left;'><img src='" + repo_site + "img/circle.png'></img>" + // Change 2: Adding `repo_site` in `instructions`
       "<p class='small'><strong>Press the F key</strong></p></div>" +
       "<div class='float: right;'><img src='" + repo_site + "img/triangle.png'></img>" + // Change 2: Adding `repo_site` in `instructions`
       "<p class='small'><strong>Press the J key</strong></p></div>" +
       "</div>"+
-      "<p style="color:red">Press any key to begin.</p>",
+      "<p style="color:red"> Press any key to begin. </p>",
   post_trial_gap: 2000
 };
 timeline.push(instructions);
