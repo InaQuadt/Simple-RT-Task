@@ -55,15 +55,6 @@ var fixation = {
   data: {test_part: 'fixation'}
 }
 
-//Changes feedback
-var feedback = { 
-    type: 'html-keyboard-response',
-    stimulus: '<div style="font-size:60px;">BLAAAA</div>',
-    choices: jspych.NO_KEYS,
-    trial_duration: 3000 
-}
-
-
 /*var test = {
   type: "image-keyboard-response",
   stimulus: jsPsych.timelineVariable('stimulus'),
