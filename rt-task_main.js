@@ -56,9 +56,9 @@ var fixation = {
 }
 
 //Changes feedback
-var feedback ={ 
+var feedback = { 
     type: 'html-keyboard-response',
-    stimulus: '<div style="font-size:60px;">BLAAAA</div>'
+    stimulus: '<div style="font-size:60px;">BLAAAA</div>',
     choices: jspych.NO_KEYS,
     trial_duration: 3000 
 }
