@@ -20,9 +20,9 @@ var instructions = {
       "<p> If a <strong>circle</strong> appears, press the letter <strong>F</strong> on the keyboard as fast as you can </p>" +
       "<p> If a <strong>triangle</strong> appears, press the letter <strong>J</strong> on the keyboard as fast as you can </p>" +
       "<div style='width: 700px;'>"+
-      "<div style='float: left;'><img src='" + repo_site + "img/blue.png'></img>" + // Change 2: Adding `repo_site` in `instructions`
+      "<div style='float: left;'><img src='" + repo_site + "img/circle.png'></img>" + // Change 2: Adding `repo_site` in `instructions`
       "<p class='small'><strong>Press the F key</strong></p></div>" +
-      "<div class='float: right;'><img src='" + repo_site + "img/orange.png'></img>" + // Change 2: Adding `repo_site` in `instructions`
+      "<div class='float: right;'><img src='" + repo_site + "img/triangle.png'></img>" + // Change 2: Adding `repo_site` in `instructions`
       "<p class='small'><strong>Press the J key</strong></p></div>" +
       "</div>"+
       "<p>Press any key to begin.</p>",
