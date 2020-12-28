@@ -102,17 +102,8 @@ var feedback ={
     trial_duration: 3000 
 }
 
-var practice_block = {
-    timeline: [fixation, test, feedback],
-    timeline_variables: test_stimuli,
-    repetitions: 5,
-    randomize_order: true
-}
-timeline.push(practice_block);
-
-
 var test_procedure = {
-  timeline: [fixation, test],
+  timeline: [fixation, test, feedback],
   timeline_variables: test_stimuli,
   repetitions: 5,
   randomize_order: true
