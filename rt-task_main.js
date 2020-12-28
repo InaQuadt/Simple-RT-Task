@@ -39,10 +39,10 @@ timeline.push(instructions);
   data: { test_part: 'test', correct_response: 'j'} }
 ];*/
 var test_stimuli = [
-  { stimulus: repo_site + "img/blue.png", side: 'left', data: { test_part: 'test', correct_response: 'f', side: 'left'}},
-  { stimulus: repo_site + "img/blue.png", side: 'left', data: { test_part: 'test', correct_response: 'j', side: 'left' }},
-  { stimulus: repo_site + "img/orange.png", side: 'right', data: { test_part: 'test', correct_response: 'f', side: 'right'}},
-  { stimulus: repo_site + "img/orange.png", side: 'right', data: { test_part: 'test', correct_response: 'j', side: 'right'}}
+  { stimulus: repo_site + "img/circle.png", side: 'left', data: { test_part: 'test', correct_response: 'f', side: 'left'}},
+  { stimulus: repo_site + "img/circle.png", side: 'left', data: { test_part: 'test', correct_response: 'j', side: 'left' }},
+  { stimulus: repo_site + "img/triangle.png", side: 'right', data: { test_part: 'test', correct_response: 'f', side: 'right'}},
+  { stimulus: repo_site + "img/triangle.png", side: 'right', data: { test_part: 'test', correct_response: 'j', side: 'right'}}
 ];
 
 var fixation = {
