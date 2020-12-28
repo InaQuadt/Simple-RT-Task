@@ -55,6 +55,14 @@ var fixation = {
   data: {test_part: 'fixation'}
 }
 
+//Changes feedback
+var feedback ={ 
+    type: 'html-keyboard-response',
+    stimulus: '<div style="font-size:60px;">BLAAAA</div>'
+    choices: jspych.NO_KEYS,
+    trial_duration: 3000 
+}
+
 
 /*var test = {
   type: "image-keyboard-response",
@@ -87,21 +95,6 @@ var test = {
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
   }
 };
-
-/Changes feedback
-var feedback ={ 
-    type: "html-keyboard-response",
-    stimulus: function() {
-        var feedback_text = "incorrect";
-        var lasttrialdata = jsPsych.data.getLastTrialData().values()[0].accuracy;
-        if (lasttrialdata == true) {
-          feedback_text = "Correct!"
-        }
-        return feedback_text
-    }, 
-    choices: jspych.NO_KEYS,
-    trial_duration: 3000 
-}
 
 
 var test_procedure = {
